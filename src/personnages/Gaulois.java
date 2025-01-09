@@ -9,8 +9,19 @@ public class Gaulois {
 		this.force = force;
 	}
 	
-	String getNom() {
+	protected String getNom() {
 		return nom;
 	}
+	
+	public static void mainB(String[] args) {
+		Gaulois asterix = new Gaulois("Astérix",8);
+		System.out.println(asterix.getNom());
+
+	}
+	
+	public void parler(String texte) {
+        System.out.println("Le gaulois " + this.nom + " : « " + texte + " ».");
+    }
+
 	
 }
