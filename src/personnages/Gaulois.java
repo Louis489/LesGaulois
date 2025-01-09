@@ -9,7 +9,7 @@ public class Gaulois {
 		this.force = force;
 	}
 	
-	protected String getNom() {
+	public String getNom() {
 		return nom;
 	}
 	
@@ -20,7 +20,7 @@ public class Gaulois {
 	}
 	
 	public void parler(String texte) {
-        System.out.println("Le gaulois " + this.nom + " : « " + texte + " ».");
+        System.out.println("Le gaulois " + nom + " : « " + texte + " ».");
     }
 
 	
