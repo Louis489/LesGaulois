@@ -15,25 +15,25 @@ public abstract class Personnage {
 	}
 	
 	public void parler(String texte) {
-        System.out.println(donnerAuteur() + nom + " : « " + texte + " ».");
+        System.out.println("Le " + donnerAuteur() + nom + " : « " + texte + " ».");
     }
 	
 	protected abstract String donnerAuteur();
 	
 	
-	public void frapper(Personnage adversaire) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + adversaire.getNom());
-		adversaire.recevoirCoup(force/3);
-		
-	}
+    public void frapper(Personnage adversaire) {
+  
+        System.out .println(donnerAuteur() + getNom() + " donne un grand coup au " + adversaire.donnerAuteur() + adversaire.getNom());
+        adversaire.recevoirCoup(force / 3);
+    }
 		
 	public void recevoirCoup(int coup) {
 		if(coup >= force){
 			force = 0;
-			System.out.println("J’abandonne…");
+			parler("J’abandonne…");
 		}
 		else{
-			System.out.println("Aïe !");
+			parler("Aïe !");
 			force = force - coup;
 		}}
 }

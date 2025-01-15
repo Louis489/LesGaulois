@@ -3,7 +3,7 @@ package test_fonctionnel;
 import personnages.Gaulois;
 import personnages.Romain;
 
-public class TestGaulois {
+public class TestSites {
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix",8);
 		asterix.parler("Bonjour à tous ");
