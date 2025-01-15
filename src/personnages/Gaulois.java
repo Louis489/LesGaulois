@@ -1,27 +1,14 @@
 package personnages;
 
-public class Gaulois {
+public class Gaulois extends Personnage{
 	private String nom;
 	private int force;
 	
 	public Gaulois(String nom, int force) {
-		this.nom = nom;
-		this.force = force;
+		super(nom,force);
 	}
 	
-	public String getNom() {
-		return nom;
+	protected String donnerAuteur() {
+		return "Gaulois ";
 	}
-	
-	public static void mainB(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix",8);
-		System.out.println(asterix.getNom());
-
-	}
-	
-	public void parler(String texte) {
-        System.out.println("Le gaulois " + nom + " : « " + texte + " ».");
-    }
-
-	
 }
