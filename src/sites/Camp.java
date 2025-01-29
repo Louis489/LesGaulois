@@ -1,10 +1,10 @@
 package sites;
-import personnages.Gaulois;
+import personnages.Grade;
 import personnages.Soldat;
 
 public class Camp {
 	private Soldat commandant;
-	private Soldat[] soldats = new Soldat[3];
+	private Soldat[] soldats = new Soldat[80];
 	private int nbsoldat = 0;
 	
 	public Camp(Soldat commandant){
@@ -25,5 +25,22 @@ public class Camp {
             commandant.parler("Désolé " + soldat.getNom() + " notre camp est complet !");
         }
     }
-
+	
+	public void afficherCamp() {
+	    System.out.println("Le camp dirigé par " + commandant.getNom() + " contient les soldats :" );
+	    for (int i = 0; i < nbsoldat; i++) {
+	        System.out.println("- " + soldats[i].getNom());
+	    }
+	}
+	
+    public void changerCommandant(Soldat nouveauCommandant) {
+        if(nouveauCommandant.getGrade().equals(Grade.CENTURION)) {
+        	commandant = nouveauCommandant;
+        	commandant.parler("Moi " + commandant.getNom() + " je prends la direction du camp romain.");
+        	
+        }else {
+        	nouveauCommandant.parler("Je ne suis pas suffisamment gradé pour prendre la direction du camp romain. ");
+        }
+    }
+    
 }
